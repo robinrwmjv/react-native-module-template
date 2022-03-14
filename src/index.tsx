@@ -1,15 +1,17 @@
 import * as React from 'react'
-import { Button, NativeModules, StyleSheet, Text, View } from 'react-native'
+import { Button, NativeModules, StyleSheet, Text, View, Modal } from 'react-native'
 
 export const addOne = (input: number) => input + 1
 
-export const Counter = () => {
+export const pwd = () => {
   const [count, setCount] = React.useState(0)
 
   return (
     <View style={styles.container}>
+      <Modal animationType='slide' presentationStyle='pageSheet'>
       <Text>You pressed {count} times</Text>
       <Button onPress={() => setCount(addOne(count))} title='Press Me' />
+      </Modal>
     </View>
   )
 }
@@ -23,4 +25,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default NativeModules.RNModuleTemplateModule
+export default NativeModules.ONESdkModule
